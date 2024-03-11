@@ -41,7 +41,7 @@ function autoFillFields() {
 window.addEventListener('load', function () {
     // get current URL
     let currentURL = window.location.href;
-    console.log("Current URL:", currentURL);
+    // console.log("Current URL:", currentURL);
     shouldFillPassword(currentURL, function (shouldFill) {
         if (shouldFill) {
             console.log("Window loaded. Now attempting to autofill...");
