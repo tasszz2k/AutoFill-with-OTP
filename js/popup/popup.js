@@ -1,3 +1,5 @@
+copyPasswordToClipboard();
+
 document.getElementById('saveBtn').addEventListener('click', function () {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -40,10 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//3. UI user have a button copy password (password+OTP)
-document.getElementById('copyPasswordBtn').addEventListener('click', function () {
-    // showNotification("Clicked", "error"); // Added error notification
-
+function copyPasswordToClipboard() {
     chrome.storage.sync.get(['password', 'secret'], function (data) {
         if (data.password && data.secret) {
             const otp = generateOTP(data.secret);
@@ -55,6 +54,11 @@ document.getElementById('copyPasswordBtn').addEventListener('click', function ()
             showNotification("Failed to copy. Check your configurations.", "error"); // Added error notification
         }
     });
+}
+
+//3. UI user has a button copy password (password+OTP)
+document.getElementById('copyPasswordBtn').addEventListener('click', function () {
+    copyPasswordToClipboard();
 });
 
 function copyToClipboard(text) {
