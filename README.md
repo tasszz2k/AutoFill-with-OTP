@@ -109,10 +109,10 @@ AutoFill_with_OTP_Extension/
 - [x] Input username, password, secret key (for OTP generation), and URLs of the website to be autofilled
 - [x] Store user data in local storage
 - [x] Autofill username and password fields
-- [ ] Filter URLs
+- [x] Filter URLs
 - [x] Generate OTP
 - [x] Copy OTP to clipboard
-- [ ] Automatically submit a login form
+- [x] Automatically submit a login form
 
 ### Nice-to-Have Features
 - [ ] Encrypt user data
